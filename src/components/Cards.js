@@ -1,12 +1,11 @@
 import React from "react";
 
-export default function Cards({ data }) {
-  console.log(data);
+export default function Cards({ fish }) {
 
   return (
     <div className="container">
       <div className="card-columns mt-4 ">
-        {data.map((item) => (
+        {fish.map((item) => (
           <div key={item.id} className="card border-success">
             <div className="card-header">
               <div>

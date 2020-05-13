@@ -1,5 +1,8 @@
 import React from "react";
 import styled from "styled-components";
+import {Link} from 'react-router-dom';
+import Cards from "./Cards";
+
 
 const HeaderStyle = styled.header`
   width: 100%;
@@ -15,8 +18,10 @@ const OverlayDiv = styled.div`
   background-color: rgba(0, 0, 0, 0.5);
 `;
 
-export default function Showcase() {
+export default function Showcase({fish}) {
+  
   return (
+    <>
     <HeaderStyle className="header">
       <OverlayDiv>
         <nav>
@@ -31,12 +36,14 @@ export default function Showcase() {
                 <a href="#0">Home</a>
               </li>
               <li>
-                <a href="#0">Add Fish</a>
+                <Link to="/form">Add Fish</Link>
               </li>
             </ul>
           </div>
         </nav>
       </OverlayDiv>
     </HeaderStyle>
+    <Cards fish={fish}/>
+    </>
   );
 }
